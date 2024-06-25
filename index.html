@@ -12,8 +12,21 @@ canvas {
 <body onload="startGame()">
 <script>
 
+var myGamePiece;
+
 function startGame() {
     myGameArea.start();
+    myGamePiece = new compenent(30,30,"red",10,120);
+}
+
+function compenent(width,height,color,x,y){
+    this.width=width;
+    this.height=height;
+    this.x=x;
+    this.y=y;
+    ctx = myGameArea.context;
+    ctx.fillStyle = color;
+    ctx.fillRect(this.x,this.y,this.width,this.height);
 }
 
 var myGameArea = {
@@ -25,8 +38,12 @@ var myGameArea = {
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     }
 }
+
+
+
 </script>
 
 <p> We have created a game area! (or at least an empty canvas)</p>
+
 </body>
 </html>
