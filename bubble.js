@@ -6,7 +6,7 @@ canvas.width= window.innerWidth;
 canvas.height= window.innerHeight;
 
 const particleArray = [];
-class particle{
+class Particle{
     constructor(x=0,y=0){
         this.x=x;
         this.y=y;
@@ -49,7 +49,7 @@ const handleDrawCircle = (event) =>{
     b = event.pageY;
 
     for(let i=0; i<50; i++){
-        const particle = new particle(a,b);
+        const particle = new Particle(a,b);
         particleArray.push(particle);
     }
 };
