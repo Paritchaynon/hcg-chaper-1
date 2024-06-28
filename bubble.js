@@ -40,7 +40,7 @@ class Particle{
 
     move(){
         this.x = this.x+this.dx;
-        this.y = thisy-this.dy;
+        this.y = this.y-this.dy;
     }
 }
 
