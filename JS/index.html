@@ -7,14 +7,24 @@
     <script src="game.js"></script>
     <script src="sprite.js"></script>
     <script>
-        document.
-        addEventListener("DOMContentLoaded",function(event){
+        let supportsPassive = false;
+        try{
+            let opts = Object.defineProperty({}, 'passive',{
+                get: function (){
+                    supportsPassive = true;
+                }
+            });
+            window.addEventListener("testPassive",null,opts);
+            window.removeEventListener("testPassive",null,opts);
+        } catch (e) {}
+        
+        document.addEventListener("DOMContentLoaded",function(event){
             const game = new Game();
+            window.game = game;
     })
     </script>
 </head>
-
 <body>
-<canvas id ="game" width="460" height="320" style="border: 1px solid black;"></canvas>    
+    <canvas id ="game" width="460" height="320" style="border: 1px solid black;"></canvas>    
 </body>
 </html>
